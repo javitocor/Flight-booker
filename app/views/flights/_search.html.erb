@@ -1,0 +1,11 @@
+<%= form_tag(search_path, :method => "get") do %> 
+    <%= label_tag(:from_airport_id, "Choose deperture:") %>     
+    <%= select_tag(:from_airport_id, options_for_select(@airport_option), include_blank: true) %>
+    <%= label_tag(:to_airport_id, "Choose destination:") %>  
+    <%= select_tag(:to_airport_id, options_for_select(@airport_option), include_blank: true) %>
+    <%= label_tag(:passengers, "Number of passengers:") %>
+    <%= select_tag(:passengers, options_for_select(@passenger_option)) %>
+    <%= label_tag(:start, "Choose date:") %>
+    <%= select_tag(:start, options_for_select(@date_option)) %>  
+    <%= button_tag "Search",:name => nil %>       
+<% end %>
