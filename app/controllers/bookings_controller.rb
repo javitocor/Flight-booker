@@ -2,7 +2,11 @@ class BookingsController < ApplicationController
     def new 
         @booking = Booking.new
         @flight = Flight.find(params[:booking])
-        @passenger = Passenger.new
+        num_passengers = params[:passengers].to_i
+        @passenger = []
+        num_passengers.times do
+            @passenger << Passenger.new
+        end
     end
 
     def create
@@ -17,26 +21,6 @@ class BookingsController < ApplicationController
     def show 
         @booking = Booking.find(params[:id])
     end
-
-    def edit
-        @booking = Booking.find(params[:id])  
-    end
-
-    def update 
-        @booking = Booking.find(params[:id])
-        if @booking.update(booking_params) 
-            redirect_to @booking
-        else
-            redirect_to 
-        end
-    end
-
-    def destroy 
-        @booking = Booking.find(params[:id])
-        @booking.destroy 
-        redirect_to root_path
-    end
-
     private
 
     def booking_params
