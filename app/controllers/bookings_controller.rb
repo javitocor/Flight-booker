@@ -3,9 +3,9 @@ class BookingsController < ApplicationController
         @booking = Booking.new
         @flight = Flight.find(params[:booking])
         num_passengers = params[:passengers].to_i
-        @passenger = []
+        @passengers = []
         num_passengers.times do
-            @passenger << Passenger.new
+            @passengers << Passenger.new
         end
     end
 
@@ -21,6 +21,7 @@ class BookingsController < ApplicationController
     def show 
         @booking = Booking.find(params[:id])
     end
+
     private
 
     def booking_params
