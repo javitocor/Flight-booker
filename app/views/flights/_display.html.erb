@@ -3,7 +3,13 @@
 <% else %>
     <ul>
     <% @results.each do |result| %>
+        <%= form_for model: @booking, url: new_bookings_path, method: :get do |f| %>
+         <%= f.radio_button :booking, result.id  %>
+        <!--<label><input type="radio" name="booking[flight_id]" value = '#{result.id}' ></label>-->
         <li>From: <%= result.from_airport.name %> '<%= result.from_airport.code %>' | To: <%= result.to_airport.name %> '<%= result.to_airport.code %>' | Date: <%= result.start %> | Duration: <%= result.duration %> minutes </li>
+        <% f.hidden_field(:passengers, :value => params[:flight][:passengers]) %>
+        <%= f.submit 'Select Flight' %>
+        <% end %>
     <% end %>
     </ul>
 <% end %>
