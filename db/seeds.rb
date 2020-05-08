@@ -9,14 +9,14 @@
     )
 end
 
-50.times do
+200.times do
     time = rand(30..600)
     airport = Airport.all.sample
     airport2 = Airport.all.sample
     Flight.create!(
         from_airport: Airport.find(airport.id),
         to_airport: Airport.find(airport2.id),
-        start:DateTime.now+rand(2000),
+        start:DateTime.now+rand(100),
         duration: time
     )
 end

@@ -1,11 +1,29 @@
+<% if false %>
 <%= form_tag(search_path, :method => "get") do %> 
     <%= label_tag(:from_airport_id, "Choose deperture:") %>     
-    <%= select_tag(:from_airport_id, options_for_select(@airport_option), include_blank: true) %>
+    <%= select_tag(:from_airport_id, options_for_select(@airport_option)) %>
     <%= label_tag(:to_airport_id, "Choose destination:") %>  
-    <%= select_tag(:to_airport_id, options_for_select(@airport_option), include_blank: true) %>
+    <%= select_tag(:to_airport_id, options_for_select(@airport_option), include_blank: true) %></br>
     <%= label_tag(:passengers, "Number of passengers:") %>
-    <%= select_tag(:passengers, options_for_select(@passenger_option)) %>
+    <%= select_tag(:passengers, options_for_select(@passenger_option), include_blank: true) %></br>
     <%= label_tag(:start, "Choose date:") %>
-    <%= select_tag(:start, options_for_select(@date_option)) %>  
+    <%= select_tag(:start, options_for_select(@date_option), include_blank: true) %></br>  
     <%= button_tag "Search",:name => nil %>       
+<% end %>
+<% end %>
+
+<%= form_with(scope: :flight, method: :get, local: true) do |f| %>
+    <%= f.label :from %>
+    <%= f.select :from_airport_id, options_for_select(@airport_option), include_blank: true %>
+
+    <%= f.label :to %>
+    <%= f.select :to_airport_id, options_for_select(@airport_option), include_blank: true %></br>
+
+    <% f.label :passengers, "Number of passengers" %>
+    <%= f.select :passengers, options_for_select(@passenger_option), include_blank: true %></br>
+
+    <% f.label :start, "Flight date" %>
+    <%= f.select :start, options_for_select(@date_option), include_blank: true %></br>
+
+    <%= f.submit "Search" %>
 <% end %>

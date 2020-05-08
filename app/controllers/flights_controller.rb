@@ -3,11 +3,7 @@ class FlightsController < ApplicationController
         @airport_option = Airport.all.map{ |u| [ u.name, u.id ] }
         @passenger_option = [1, 2, 3, 4]
         @date_option = Flight.order('start ASC').map{ |x| [x.flight_date_formatted, x.start] }
-    end
-
-    def searcher
-
-        redirect_to root_path
+        @results = Flight.search(search_params)
     end
 
     private
