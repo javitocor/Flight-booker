@@ -1,24 +1,53 @@
-# README
+# Flight Booker
+A site to book flights based on a project in the Odin Project Website.
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+# What it does
+You can search for your flight and book tickets up to four different passengers.
 
-Things you may want to cover:
+# Built
+- Ruby on rails
+- VSCode
+- Ruby
 
-* Ruby version
+# Getting Started
+To get a local copy up and running follow these simple example steps.
 
-* System dependencies
+- Clone the project unto your local machine
+- Run 'bundle install', 'rails db:migrate' and 'rails db:seed'
+- Run the server with 'rails server'
+- Open your browser and type 'localhost:3000'
 
-* Configuration
+# Prerequisites
+- Get the latest version of Ruby
 
-* Database creation
+# Author
 
-* Database initialization
+👤 Javier Oriol Correas Sanchez Cuesta
 
-* How to run the test suite
+- Github: [@javitocor](https://github.com/javitocor)
+- Twitter: [@JavierCorreas4](https://twitter.com/JavierCorreas4)
+- Linkedin: [Javier Oriol Correas Sanchez-Cuesta](https://www.linkedin.com/in/javier-correas-sanchez-cuesta-15289482/)
 
-* Services (job queues, cache servers, search engines, etc.)
+# 🤝 Contributing
+Contributions, issues and feature requests are welcome! Start by:
 
-* Deployment instructions
+- Forking the project.
+- Cloning the project to your local machine.
+- cd into the project directory.
+- Run git checkout -b your-branch-name.
+- Make your contributions.
+- Push your branch up to your forked repository.
+- Open a Pull Request with a detailed description to the development branch of the original project for a review.
 
-* ...
+# Attributions and Credit 🚀
+- Stackoverflow
+- The Odin Project 
+
+# Show your support
+Give a ⭐️ if you like this project!
+
+📝 License
+
+Check out my stories on medium to see what I'm talking about! Follow me on Instagram and Twitter to see what I am up to!
+
+Enjoy!
