@@ -6,6 +6,10 @@ class FlightsController < ApplicationController
         @results = Flight.search(search_params)
     end
 
+    def searcher
+      @results = Flight.search(search_params)
+    end 
+
     private
 
     def search_params

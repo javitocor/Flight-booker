@@ -10,8 +10,9 @@ class Flight < ApplicationRecord
     end
 
     def self.search(search_params)
+        search_params[:passengers] = ""
         valid_params = search_params.select{ |key,value| value != ""}
-        valid_params[:start] = valid_params[:start].to_time.all_day unless valid_params[:start].nil?     
+        valid_params[:start] = valid_params[:start].to_time.all_day unless valid_params[:start].nil?          
         where(valid_params)
         #search_params[:start] = search_params[:start].to_time.all_day
         #where(from_airport_id: search_params[:from_airport_id], to_airport_id: search_params[:to_airport_id],

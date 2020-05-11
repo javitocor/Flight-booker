@@ -1,11 +1,11 @@
 <%= form_for(@booking) do |f| %>
     <%= f.hidden_field(:flight_id, :value => @flight.id) %>
-    <% num_passengers.times do %>
-        <%= f.fields_for @passengers do |p| %>
-            <%= p.label :name %>
-            <%= p.text_field :name %>
-            <%= p.label :email %>
-            <%= p.email_field :email %>
+    <% @num_passengers.times do %>
+        <%= f.fields_for :passenger, @passengers do |x| %>
+            <%= x.label :name %>
+            <%= x.text_field :name %>
+            <%= x.label :email %>
+            <%= x.email_field :email %><br>
         <% end %>
     <% end %>
     <%= f.submit 'Submit booking' %>
