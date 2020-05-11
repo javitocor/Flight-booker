@@ -1,5 +1,6 @@
 <h1>Your booking form</h1>
 
-<h5>From: <%= @flight.from_airport.name %> '<%= @flight.from_airport.code %>' | To: <%= @flight.to_airport.name %> '<%= @flight.to_airport.code %>' | Date: <%= @flight.start %> | Duration: <%= @flight.duration %> minutes </h5>
+<h5>From: <%= @flight.from_airport.name %> '<%= @flight.from_airport.code %>' | To: <%= @flight.to_airport.name %> '<%= @flight.to_airport.code %>' | Date: <%= @flight.start %> | Duration: <%= @flight.duration %> minutes | Passengers: <%= @num_passengers %> </h5>
 
 <%= render 'form' %>
+<%= link_to 'Back to Search', root_url %>

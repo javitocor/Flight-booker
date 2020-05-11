@@ -1,7 +1,7 @@
 <%= form_for(@booking) do |f| %>
     <%= f.hidden_field(:flight_id, :value => @flight.id) %>
     <% @num_passengers.times do %>
-        <%= f.fields_for :passenger, @passengers do |x| %>
+        <%= f.fields_for :passenger do |x| %>
             <%= x.label :name %>
             <%= x.text_field :name %>
             <%= x.label :email %>
