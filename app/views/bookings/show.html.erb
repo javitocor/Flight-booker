@@ -1,4 +1,7 @@
 <h1>Your Booking</h1>
 
-<h5>From: <%= @flight.from_airport.name %> '<%= @flight.from_airport.code %>' | To: <%= @flight.to_airport.name %> '<%= @flight.to_airport.code %>' | Date: <%= @flight.start %> | Duration: <%= @flight.duration %> minutes </h5>
+<h5>From: <%= @booking.flight.from_airport.name %> '<%= @booking.flight.from_airport.code %>' | To: <%= @booking.flight.to_airport.name %> '<%= @booking.flight.to_airport.code %>' | Date: <%= @booking.flight.start %> | Duration: <%= @booking.flight.duration %> minutes </h5>
 
+
+<%= link_to 'back to booking', new_booking_path %> | 
+<%= link_to 'back to search', root_path %>
